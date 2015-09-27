@@ -1,4 +1,6 @@
-== Variables ==
+Variables
+===============
+
 subjectId - The integer subjectId from the original study. Valid values: 1-30
 activityLabel - The activity performed during the mesurement by the subject. Fixed list of labels.
     Valid values:
@@ -8,12 +10,10 @@ activityLabel - The activity performed during the mesurement by the subject. Fix
         SITTING
         STANDING
         LAYING
-variable - The original variable name from the UCI study. See below for 
+variable - The original variable name from the UCI study. See below for a copy of the features_info.txt file from the original study that detail the variable labels.
 variableAverage - The mean of the variable's measurements for a given subject during a given activity.
 
-== Copy of features_info.txt from the original study ==
-
-Feature Selection 
+Copy of features_info.txt from the original study
 =================
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
