@@ -50,6 +50,7 @@ activityMeansData <- merge(combinedActivity
                            , by.y = "activityId"
                            , all = TRUE)
 
+# Load and merge activity labels against the activity codes
 activityLabels <- read.table("./data/UCI HAR Dataset/activity_labels.txt")
 colnames(activityLabels)<- c("activityCode","activityLabel")
 activityMeanData <- merge(
@@ -72,5 +73,6 @@ subjectActivityMeansData <- merge(combinedSubject
 finalData <- subjectActivityMeansData[,c(2,4:83)]
 meltFinalData <- melt(finalData, id = c("subjectId", "activityLabel"))
 
+# Generate a tidy data set and write to file
 tidyData <- ddply(meltFinalData,.(subjectId, activityLabel, variable), summarize, variableAverage=mean(value))
 write.table(tidyData, file="./data/activity_means.txt", row.names = FALSE)
